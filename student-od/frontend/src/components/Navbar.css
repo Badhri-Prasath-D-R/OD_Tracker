@@ -1,0 +1,163 @@
+/* NAVBAR BASE */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  z-index: 1000;
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* CONTAINER */
+.navbar-container {
+  height: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LEFT */
+.navbar-title {
+  font-size: 20px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.navbar-title:hover {
+  transform: scale(1.05);
+}
+
+/* RIGHT */
+.user-menu {
+  position: relative;
+}
+
+/* USER BUTTON */
+.user-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.user-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(102, 126, 234, 0.55);
+}
+
+/* AVATAR */
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* EMAIL */
+.user-email {
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ARROW */
+.arrow {
+  font-size: 11px;
+  transition: transform 0.3s ease;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+/* DROPDOWN */
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 52px;
+  background: white;
+  border-radius: 14px;
+  width: 240px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  animation: dropdownFade 0.25s ease;
+  overflow: hidden;
+  z-index: 1001;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* DROPDOWN CONTENT */
+.dropdown-email {
+  padding: 14px;
+  font-size: 13px;
+  color: #555;
+  border-bottom: 1px solid #eee;
+  word-break: break-all;
+}
+
+/* LOGOUT */
+.logout-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: linear-gradient(135deg, #f5576c, #f093fb);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.logout-button:hover {
+  opacity: 0.9;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .user-email {
+    display: none;
+  }
+}
